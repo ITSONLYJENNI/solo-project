@@ -7,6 +7,10 @@ class CitiesController < ApplicationController
     end
   end
 
+  def index
+    @cities = City.all
+  end
+
   def city_params
     params.require(:city).permit(:name)
   end
