@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root "city#index"
+  root "weather#index"
+  resources :cities, only: [:create]
 
-    resources :cities, only: [:create]
 end

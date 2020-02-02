@@ -26,6 +26,8 @@ gem 'simple_form'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'devise'
+gem 'factory_bot_rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

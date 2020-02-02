@@ -1,10 +1,14 @@
 class CitiesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user! only: [:create]
   def create
-      @city = City.create(city_params)
+    @city = current_user.cities.create(city_params)
     if @city.valid?
       redirect_to root_path
     end
+  end
+
+  def index
+    @cities = City.all
   end
 
   def city_params
