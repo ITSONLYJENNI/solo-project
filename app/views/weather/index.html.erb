@@ -1,4 +1,4 @@
-<div class="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 card form">
+<div class="col-12 col-sm-12 col-md-12 card form">
   <h1>Add Your City</h1>
   <br />
   <%= simple_form_for @city do |f| %>
@@ -11,16 +11,12 @@
   <% @cities.each do |city| %>
    <div class="city" id=<%= city.name %> data-city=<%= city.name %>>
       <p><%= city.name %></p>
-   
-      <% if city.user.present? %>
-        <small><%= city.user.email %></small>
-      <% end %>
    </div>
   <% end %>
-
   
 
 </div>
+
 
 <script>
 our_api_key="5ebacafcbbf03ba9e3905ca7197b8295"
@@ -30,7 +26,6 @@ $(document).ready(function(){
     $.getJSON( "https://api.openweathermap.org/data/2.5/weather?units=imperial&appid=" + our_api_key + "&q=" + the_city, function( data ) {
       our_div = $('#' + the_city)
       our_div.append("<p>"+data.main.temp+"<p>");
-      our_div.append("<p>"+data.weather.description+"<p>");
     });
   })
 })
